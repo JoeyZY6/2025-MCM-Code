@@ -1,0 +1,503 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MCM/ICM LaTeX Template %%
+%% 2025 MCM/ICM           %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{left=1in,right=0.75in,top=1in,bottom=1in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Replace ABCDEF in the next line with your chosen problem
+% and replace 1111111 with your Team Control Number
+\newcommand{\Problem}{C}
+\newcommand{\Team}{2527543}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{newtxtext}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{newtxmath} % must come after amsXXX
+
+\usepackage[pdftex]{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{indentfirst} % 确保标题后的第一个段落也缩进
+\usepackage{float}
+\usepackage{subcaption}
+
+% 调整段落设置
+\setlength{\parindent}{2em} % 设置段落首行缩进为2个字符宽度
+\setlength{\parskip}{0.5em} % 设置段落之间的垂直间距为0.5行高
+\renewcommand{\contentsname}{\hspace*{\fill}\Large\bfseries Contents \hspace*{\fill}}
+
+
+
+\lhead{Team \Team}
+\rhead{}
+\cfoot{}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\graphicspath{{.}}  % Place your graphic files in the same directory as your main document
+\DeclareGraphicsExtensions{.pdf, .jpg, .tif, .png}
+\thispagestyle{empty}
+\vspace*{-16ex}
+\centerline{\begin{tabular}{*3{c}}
+	\parbox[t]{0.3\linewidth}{\begin{center}\textbf{Problem Chosen}\\ \Large \textcolor{red}{\Problem}\end{center}}
+	& \parbox[t]{0.3\linewidth}{\begin{center}\textbf{2025\\ MCM/ICM\\ Summary Sheet}\end{center}}
+	& \parbox[t]{0.3\linewidth}{\begin{center}\textbf{Team Control Number}\\ \Large \textcolor{red}{\Team}\end{center}}	\\
+	\hline
+\end{tabular}}
+%%%%%%%%%%% Begin Summary %%%%%%%%%%%
+% Enter your summary here replacing the (red) text
+% Replace the text from here ...
+
+\begin{center}
+\section*{A New Perspective on Olympic Medal Predictions: Multi-Level Analysis from Country to Athlete}
+
+    \vspace{-1em}
+
+    \textbf{Summary}
+    
+    \end{center}
+The Olympic medal table has always been a focal point of attention during the Olympic Games, reflecting a nation's overall power and economic strength. Accurate prediction of Olympic medal standings not only enhances public interest in event predictions but also plays a crucial role in assisting athletes with targeted training for their events. With the continuous advancement of modern technology, this study aims to develop robust predictive models for the 2028 Summer Olympics in Los Angeles, USA.
+
+Our research focuses on three main objectives:
+\begin{enumerate}
+    \item \textbf{Medal Prediction Models:} We construct macroscopic (country-level) and microscopic (individual athlete-level) models to predict the number of gold medals and total medals each country will win in the 2028 Olympics. The macroscopic model utilizes an LSTM machine learning approach, while the microscopic model employs Markov chains to build transition matrices for individual athletes. Additionally, we use a Random Forest model to predict countries that have yet to earn any Olympic medals, estimating their likelihood of winning their first medal in 2028.
+    
+    \item \textbf{Impact of Olympic Events:} We investigate the relationship between the number and type of Olympic events and the medal counts of different countries. Using Lasso regression models, we analyze the importance of medals in various sports for different countries, addressing overfitting issues and demonstrating the emphasis placed by countries on different sports.
+    
+    \item \textbf{Host Country and Great Coach Effect:} We explore the correlation between the host country and its Olympic performance through Mann-Whitney U tests and Kolmogorov-Smirnov (K-S) tests. Furthermore, we examine the potential impact of renowned coaches on medal counts using a multi-level model architecture, identifying key sports where investing in high-caliber coaches could yield substantial benefits.
+\end{enumerate}
+
+Key findings from our models include:
+\begin{itemize}
+    \item For total medal counts, the United Kingdom is projected to rise to third place, France to fourth, Germany to sixth, and New Zealand to tenth. Japan will drop to sixth place, and Australia will drop to fifth.
+    \item For gold medal counts, the United Kingdom will rise to third place, Germany to fourth, while Japan will drop to sixth and Australia to seventh.
+    \item Athletes' performance at the Olympics is largely dependent on their current state, leading us to propose a new perspective using the Markov chain model for more accurate predictions.
+\end{itemize}
+
+This study provides valuable insights into optimizing strategies for future Olympic performances, informing country Olympic committees on strategic decisions regarding athlete development, coaching investments, and event prioritization.
+
+
+% to here
+%%%%%%%%%%% End Summary %%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagestyle{fancy}
+% Uncomment the next line to generate a Table of Contents
+\tableofcontents
+
+
+\newpage
+
+\setcounter{page}{1}
+\rhead{Page \thepage\ }
+
+\section{Introduction}
+
+\subsection{Background}
+
+The Olympic medal table has always been a focal point of attention during the Olympic Games. In the modern Olympic Games, the ranking of Olympic medals often reflects a nation's overall power and economic strength, serving as an indicator of its average level of economic development (Bian, 2005). The prediction of the Olympic medal standings is particularly important, as it not only enhances public interest in event predictions but also plays a crucial role in assisting athletes with targeted training for their events.
+
+With the continuous advancement of modern technology, the accuracy of predicting medal standings has improved to an astonishing degree. By applying Mean Squared Error (MSE) normalization to the data, along with the formula for predicting medal counts and the virtual medal table developed by Nielsen, the deviation in the medal prediction for the 2024 Paris Olympics has been remarkably low:
+
+While predictions of Olympic medals can account for factors such as national economies and athlete-specific data, this paper adopts a different perspective. The aim is to \ldots
+
+
+\subsection{Restatement of the Problem}
+
+As researchers in this domain, our primary objective is to develop a robust predictive model for Olympic medal counts. The specific tasks and objectives of our study are outlined below:
+
+\begin{itemize}
+    \item \textbf{Development of Medal Prediction Models:}
+    We aim to construct models that predict the number of gold medals and total medals each country will win in the 2028 Summer Olympics in Los Angeles, USA. These models will include estimates of prediction uncertainty and performance metrics to assess their accuracy.
+
+    \begin{itemize}
+        \item Based on our developed models, we will project the medal standings for the 2028 Olympics, providing prediction intervals for all results. We will identify which countries are most likely to improve their medal count and which are expected to perform worse compared to the 2024 Olympics.
+        
+        \item Our models will also account for countries that have yet to earn any Olympic medals. We will estimate the likelihood of these countries winning their first medal in the 2028 Olympics and provide probabilistic assessments of these predictions.
+        
+        \item Additionally, we will consider the impact of the number and types of events at the Olympics. This involves exploring the relationship between the event lineup and the medal counts for various countries. We will analyze which sports are most critical for different nations and how the host country's selection of events influences overall medal outcomes.
+    \end{itemize}
+
+    \item \textbf{Investigation of the Great Coach Effect:}
+    While athletes face significant barriers to changing their national representation due to citizenship requirements, coaches can more easily move between countries. Consequently, there may be a "great coach" effect, where renowned coaches significantly influence a nation's Olympic performance. Notable examples include Lang Ping, who coached volleyball teams from both the U.S. and China to championships, and Béla Károlyi, who coached successful gymnastics teams in Romania and the U.S. We will examine historical data to quantify the potential impact of such an effect on medal counts. Specifically, we will select three countries and identify sports where investing in a high-caliber coach could yield substantial benefits, estimating the potential impact on medal counts.
+
+    \item \textbf{Original Insights and Recommendations:}
+    Beyond the primary objectives, our research aims to uncover additional insights into Olympic medal counts. These insights will inform country Olympic committees on strategic decisions regarding athlete development, coaching investments, and event prioritization. By leveraging our findings, these committees can optimize their strategies to enhance future Olympic performances.
+\end{itemize}
+\graphicspath{{./images/}}
+\subsection{Our Work}
+
+The objective of this study is to build a predictive model based on historical Olympic medal data, aiming to predict the medal standings for the 2028 Summer Olympics in Los Angeles. Specific tasks include:
+
+\begin{enumerate}
+    \item \textbf{Developing a Medal Prediction Model for the 2028 Olympics:}
+    Predict the number of gold medals and total medals each country will win in the 2028 Olympics based on historical data, and provide uncertainty intervals for each prediction. Additionally, for countries that have never won medals in previous events, predict their likelihood of winning their first medal in the 2028 Olympics.
+
+    We aim to predict the 2028 Olympic medals from both macro (country-level) and micro (individual athlete-level) perspectives. At the macro level, we use an LSTM machine learning model for predictions. At the micro level, we employ a Markov chain model to construct transition matrices for each athlete and enhance prediction reliability by setting interval ranges manually. Finally, we aggregate the predicted data of athletes from the same country to obtain the predicted medal intervals for that country in the 2028 Olympics. For predicting countries winning their first medal, we utilize a Random Forest model.
+
+    \item \textbf{Analyzing the Impact of Olympic Events:}
+    Investigate the relationship between the number and type of Olympic events and the medal counts of different countries, particularly how the host country can influence medal outcomes through its event settings.
+
+    This study uses Lasso regression models to analyze the importance of medals in different sports for various countries through feature selection and regularization. This approach addresses overfitting issues due to the large number of sports and visually demonstrates the emphasis placed by countries on different sports.
+
+    \item \textbf{Host Country and Great Coach Effect:}
+    Explore whether cross-national coaching has an impact on certain countries' Olympic performances and analyze its potential effects.
+
+    To explore the correlation between the host country and its Olympic performance, this study employs Mann-Whitney U tests and Kolmogorov-Smirnov (K-S) tests to investigate the relationship between the host country and total medal counts, as well as the relationship between total event numbers and medal counts. These analyses validate the advantage of the host country in securing medals and reveal the intrinsic link between event scale and medal totals. For the "great coach" effect, this study utilizes a multi-level model architecture to effectively capture the impact of renowned coaches on medal performance across different sports, analyzing interaction effects between project levels and integrating factors such as coaches and annual changes.
+
+    \item \textbf{Original Insights:}
+    It was found that athletes' performance at the Olympics is largely dependent on their current state. Therefore, using the Markov chain model to establish a predictive system provides a new perspective for Olympic predictions.
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{Process_Pic.png}
+    \caption{The number of medals of the host country}
+    \label{fig:1}
+\end{figure}
+
+\section{Problem 1.1: Medal Prediction}
+
+We aim to predict the medal counts for the 2028 Olympics from both macro (country) and micro (individual athlete) perspectives. On the macro level, we use historical data and various machine learning models (such as LSTM and RandomForest) to predict the total medal counts for each country in the 2028 Olympics, providing uncertainty estimates for these predictions. On the micro level, we employ Markov chains to construct transition matrices for individual athletes and define interval ranges to enhance the reliability of our predictions. Finally, we aggregate the predicted data of athletes from the same country to derive the predicted medal intervals for each country in the 2028 Olympics.
+
+\subsection{Macroscopic Model: Important Impact of Host}
+From the perspective of the entire nation, we first found that the identification of the host country has a significant impact on its number of medals. Hosting the Olympic Games provides several advantages, including home-field advantage, increased public support, and better access to training facilities. These factors contribute significantly to the performance of athletes representing the host country.
+
+
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{average_medals_comparison_green.png}
+%     \caption{The number of medals of the host country}
+%     \label{fig:1}
+% \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.338]{total_medals_over_years.png}
+    \caption{The number of medals of the host country}
+    \label{fig:1}
+\end{figure}
+
+In the figure above, we can see that the number of medals won by the country all have some increase in the year they host the Olympic Games. This is a clear indication that hosting the Olympic Games has a significant impact on the number of medals won by the host country.
+
+From this important obervation, we want to build a macroscopic model to predict the number of medals for each country. We not only based on the historical data of each country's performance in the Olympic Games, but also take into account the impact of hosting the Olympic Games on the number of medals won by the host country.
+
+Furthermore, our model integrates additional factors such as the number and types of sports events included in the Olympics, which can significantly affect medal counts. Countries with strengths in popular or newly introduced Olympic sports may see an uptick in their medal hauls due to the increased opportunities for winning medals. For instance, nations with strong traditions in swimming or athletics are projected to benefit from the inclusion of new events in these categories, potentially boosting their overall medal count.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{comparison_medals_2024_2028.jpg}
+    \caption{Comparison of the number of medals between 2024 and 2028}
+    \label{fig:2}
+\end{figure}
+
+To quantify the uncertainty in our predictions, we utilized dropout during the training phase of our LSTM model, which allows us to estimate prediction intervals for each country's medal count. These intervals provide a measure of confidence around our predictions, indicating the range within which we expect the actual medal count to fall with a certain probability. Our analysis suggests that countries like Japan, after their strong performance in Tokyo 2020, and France, following Paris 2024, are likely to maintain high medal counts, although possibly not matching their host-year peaks. Conversely, some traditionally strong sporting nations might see a slight decline in medal numbers if they face stiffer competition or undergo shifts in national sports funding and policy.
+
+By contrast, according to our predictions, the USA is likely to achieve a new high medal count, ranging from 125 to 132 medals. This projection takes into account the advantages of being the host nation and the country's strong performance across various sports disciplines.
+
+\subsection{Microscopic Model: The Impact of Individual Athletes}
+
+There are three main premises for establishing a Markov chain: time-homogeneity, the Markov property, and a finite state space. We will discuss how these premises apply to our model in the context of predicting Olympic athletes' medal outcomes.
+
+Time-homogeneity in a Markov chain refers to the property that the state transition probabilities do not change over time. Specifically, for a Markov chain ${X_n:n \geq 0}$ , if the one-step transition probability ${P(X_{n+1} = j | X_N = i)}$ is the same for all $n$, i.e., it does not depend on the time $n$, then the Markov chain is said to be time-homogeneous.
+
+The Summer Olympics are typically held every four years, with very few exceptions. Since the end of World War II, only the 2020 Tokyo Olympics were postponed due to the COVID-19 pandemic. Therefore, overall, the fixed interval between Summer Olympic Games aligns well with the definition of time-homogeneity in a Markov chain.
+
+The core characteristic of a Markov chain is the Markov property, which means that the future state of the system depends only on its current state and not on its past states. Mathematically, this is expressed as: for any time and state, ${P(X_{n+1} = j | X_n = i, X_{n-1} = i_{n-1}, \ldots, X_0 = i_0) = P(X_{n+1} = j | X_n = i)}$ . In the context of predicting Olympic athletes' medal outcomes, this means that the probability of an athlete winning a certain type of medal in the next Olympic Games depends only on their medal status in the current Games and not on their previous medal history.
+
+The state space of a Markov chain consists of all possible states, which must be finite or countably infinite. In this study, the state space for athletes' medal statuses is finite and includes four states: winning a gold medal, winning a silver medal, winning a bronze medal, and not winning a medal. Thus, the state space is ${\text{\{Gold, Silver, Bronze, No medal\}}}$.
+
+In the process of using a Markov chain to predict the distribution of Olympic medals among athletes, the medal transition matrix is the core element. This matrix characterizes the transition probabilities between different medal states (gold, silver, bronze, and no medal) for athletes. By leveraging this matrix, we can estimate the probabilities of an athlete achieving each type of medal in the next Olympic Games based on their current medal status. Essentially, it allows us to project how athletes might move from one medal state to another over successive Olympic cycles.
+
+Let $N_{ij}(t,t+1)$ represent the number of athletes transitioning from state $s_i$ to state $s_j$ during the time interval from $t$ to $t+1$ (for example, between two consecutive Olympic Games), where $i,j = 1,2,3,4$. Let $N_i(T)$ represent the number of athletes in state $s_i$ at time $t$.
+
+The transition probability $p_{ij}$ describes the likelihood that an athlete in state $s_i$ will transition to state $s_j$ within one time step (i.e., between two consecutive Olympic Games). According to the definition of a Markov chain, the transition probability $p_{ij}$ is calculated using the following formula:
+
+$$p_{ij} = \frac{N_{ij}(t,t+1)}{N_i(t)}$$
+
+Among them, $i=1,2,3,4$ and $N_i(t)=0$. When $N_i(t)=0$, $p_{ij}=0$ is usually set.
+
+\paragraph{Derivation from individual athlete probabilities to national medal counts} \
+
+When estimating the number of gold, silver, and bronze medals a country will win based on the probability of each athlete winning a medal, we can use concepts from probability theory, specifically expectation and the law of large numbers.
+
+In probability theory, for a random variable $X$ In probability theory, for a random variable $E(X)$ represents the average value of that random variable over a large number of repeated trials. For a binomial distribution (an event with two possible outcomes: success or failure, such as an athlete winning a medal or not), if the probability of an athlete winning a particular type of medal is $p$, and we assume there are $n$ such "trials" (imagine $n$ athletes in similar situations), then the expected number of medals won is $n \times p$.
+
+For a single athlete winning a particular type of medal, we can consider it as a random variable. Let $X_i$ represent the random variable indicating whether the $i$-th athlete wins a gold medal. If the athlete wins a gold medal, $X_i = 1$; otherwise, $X_i = 0$. The probability of the athlete winning a gold medal is $p_{i,\text{gold}}$, so the expectation $E(X_i) = p_{i, \text{gold}}$.
+
+The law of large numbers plays a crucial role here. It states that when the number of trials (in this case, the number of athletes) is sufficiently large, the sample mean of the random variables will converge to their mathematical expectation. In other words, if there are many athletes, each with a known probability of winning a particular type of medal, the actual average number of medals won by these athletes will tend to approach the expected value calculated based on probabilities.
+
+Suppose a country has $N$ athletes participating in the Olympics. The probability that the $i$-th athlete wins a gold medal is $p_{i,\text{gold}}$, the probability of winning a silver medal is $p_{i,\text{silver}}$, and the probability of winning a bronze medal is $p_{i,\text{bronze}}$. The total number of gold medals won by the country can be represented as the sum of all athletes' gold medal outcomes, i.e., $X_{\text{total,gold}} = \sum^N_{i=1}X_i$. According to the linearity property of expectations (for multiple random variables $X_1,X_2,\ldots,X_N,E(\sum^N_{i=1}X_i) = \sum^N_{i=1}E(X_i)$), the expected number of gold medals for the country is $E(X_{\text{total,gold}}) = \sum^N_{i=1}E(X_i) = \sum^N_{i=1}p_{i, \text{gold}}$.
+
+This approach allows us to aggregate individual athlete probabilities to predict the overall medal count for a country, providing a robust framework for forecasting Olympic performance.
+
+So, theoretically, by summing up the probabilities of each athlete winning a gold medal, the resulting value represents the expected number of gold medals for the country. In other words, we can expect that the country will win approximately this many gold medals.
+
+Similarly, for silver and bronze medals, let $Y_i$ represent the random variable indicating whether the $i$-th athlete wins a silver medal, and let $Z_i$ represent the random variable indicating whether the $i$-th athlete wins a bronze medal. The probabilities of winning silver and bronze medals are $p_{i,\text{silver}}$ and $p_{i,\text{bronze}}$, respectively. The expected number of silver medals for the country is $E(X_{\text{total,silver}}) = \sum^N_{i=1}p_{i,\text{silver}}$ respectively. The expected number of silver medals for the country is $E(X_{\text{total,bronze}}) = \sum^N_{i=1}p_{i,\text{bronze}}$.
+
+\paragraph{According to the prediction results:} \
+
+\begin{itemize}
+    \item The United Kingdom will rise to third place.
+    \item France will rise to fourth place.
+    \item Germany will rise to sixth place.
+    \item New Zealand will rise to tenth place.
+    \item Japan will drop to sixth place.
+    \item Australia will drop to fifth place.
+\end{itemize}
+
+\paragraph{Gold Medal Counts:}
+\begin{itemize}
+    \item The United Kingdom will rise to third place.
+    \item Germany will rise to fourth place.
+    \item Japan will drop to sixth place.
+    \item Australia will drop to seventh place.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Medal_Prediction_1.png}
+        \caption{Predicted medal counts for the 2028 Olympics (Part 1)}
+        \label{fig:medal_prediction_1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{Medal_Prediction.png}
+        \caption{Predicted medal counts for the 2028 Olympics (Part 2)}
+        \label{fig:medal_prediction_2}
+    \end{subfigure}
+    \caption{Predicted medal counts for the 2028 Olympics}
+    \label{fig:medal_predictions}
+\end{figure}
+
+However, although this calculation method has theoretical validity, it has some limitations in practical application. Athletes are not entirely independent; in reality, their performances may influence each other. For example, athletes in team sports collaborate with each other, and athletes from the same country may be affected by similar training environments, competition strategies, and other factors. These realities do not fully align with the independence assumption underlying the calculations. Additionally, the estimated probabilities of athletes winning medals may not be entirely accurate. These probabilities are typically based on historical data, current status, and other factors, but unexpected elements such as sudden injuries, on-the-spot performance during competitions, and other variables can cause significant deviations between actual medal outcomes and those predicted by the probabilities.
+
+Moreover, changes in Olympic rules, the number of participants, competitive environments, and other factors can also affect the actual probabilities of athletes winning medals and the final medal counts.
+
+In summary, while summing up the probabilities of each athlete winning gold, silver, and bronze medals to estimate the total medal count for a country is a reasonable approach based on expectations and the law of large numbers, the complexity of real-world scenarios means that these calculations should only be considered as rough estimates.
+
+
+
+\section{Problem 1.2: First Medal Prediction}
+
+To address the challenge of predicting which countries will earn their first Olympic medal in the upcoming Los Angeles 2028 Games, we developed a model using SMOTE (Synthetic Minority Over-sampling Technique), RandomForest, and CalibratedClassifierCV. Our approach focuses on identifying countries that have yet to win an Olympic medal and estimating the likelihood of them achieving this milestone. We trained our model using historical data from countries that previously had no medals but succeeded in winning their first medal in past Olympic games. Specifically, we analyzed the events where these countries secured their first medal and compared them with events where they did not, treating this as a key feature in our training process.
+
+By leveraging similar examples, we created a balanced dataset through SMOTE to handle the class imbalance issue inherent in such predictions. The RandomForest classifier was then employed for its robustness and ability to handle complex interactions between features. To further refine our predictions, we applied CalibratedClassifierCV to ensure that the probability estimates provided by our model are well-calibrated.
+
+Our model's projections indicate that the majority of countries without previous Olympic medals have only a low probability of earning their first medal at Los Angeles 2028. While approximately 3 to 5 countries show a realistic but still relatively low chance of achieving this milestone, the odds are generally stacked against them. This is primarily due to ongoing challenges in developing sporting infrastructure and limited resources allocated to sports programs. For instance, countries with emerging talents in less competitive sports may have slightly better odds, but those still developing their sporting infrastructure face significant hurdles. Despite these challenges, our comprehensive modeling approach aims to provide reliable estimates and insights into the potential breakthrough performances of nations aspiring to achieve their first Olympic medal.
+
+\subsection{Data Pre-processing}
+
+When constructing the Random Forest model, we paid special attention to countries that had not won medals for a long time but suddenly achieved success. Data from these countries served as a reference to help the model identify which countries might win their first medals in future Olympic Games. Specifically, we focused on filtering and incorporating data from two key groups: countries that won their first medals after 2000 and countries that have never won a medal. We then performed feature expansion by analyzing countries that transitioned from having no medals to winning medals and used their historical data as references. By combining this historical data with the data of countries that have never won medals, we created a comprehensive training dataset, enabling the model to learn from these rich historical features.
+
+During the training process, features such as the number of attempts before winning a first medal and participation in specific events provided the Random Forest model with multidimensional information, enabling it to more accurately predict the likelihood of countries that have never won medals achieving their first medal in 2028. The data was balanced using SMOTE (Synthetic Minority Over-sampling Technique) to address class imbalance issues, ensuring that the model performs well when handling the minority class (i.e., countries that have never won medals).
+
+\subsection{Model Construction}
+
+The Random Forest model is an ensemble method that enhances predictive performance by constructing multiple decision trees. Each decision tree is trained on a random subset of the training data obtained through bootstrapping, and the final prediction is made by aggregating the results from all trees, either through voting (for classification tasks) or weighted averaging (for regression tasks). In this study, for simplicity and efficiency, we used the RandomForestClassifier and further improved the model's accuracy and reliability through cross-validation and probability calibration using CalibratedClassifierCV.
+
+\subsection{Model Training and Evaluation}
+
+After training, the model demonstrated exceptional performance. The evaluation results reveal a classification report with an accuracy of 0.97, indicating that the model correctly classified 97\% of the instances. Specifically, for class 1 (countries winning their first medal), the model achieved a recall of 0.96, meaning it successfully identified 96\% of the actual positive cases, and an F1 score of 0.98, reflecting a strong balance between precision and recall. Both macro average and weighted average metrics further confirm the model's high efficiency across all classes. Additionally, the model achieved an AUC-ROC value of 0.97, which signifies its excellent capability to distinguish between different classes and confirms its robust predictive power. This high AUC-ROC score indicates that the model has a strong ability to discriminate between countries that will win their first medals and those that will not, making it highly reliable for predicting future medal winners.
+
+\subsection{Result Analysis}
+
+Using the Random Forest model, we predicted the probability of countries that have never won a medal achieving their first medal in the 2028 Olympics. Some of the prediction results are as follows:
+
+\begin{itemize}
+    \item AND: The probability of winning its first medal is 0.263473\%.
+    \item ANG: The probability of winning its first medal is 0.263540\%.
+    \item ANT: The probability of winning its first medal is 0.263660\%.
+\end{itemize}
+
+These results indicate that the likelihood of most countries that have never won a medal securing a medal in future Olympic Games is relatively low. Despite the low probabilities, these predictions offer valuable insights by highlighting specific countries with a higher potential to achieve their first medal. This information can guide further analysis and targeted efforts to support these nations in improving their chances of success in the upcoming Olympics.
+
+\section{Problem 1.3: Analysis of the importance of different sports to different countries based on linear regression}
+
+\subsection{Data Pre-processing} \
+
+Considering the large number of events and the relatively small number of events participated in by individual countries, which could easily lead to overfitting, we decided to focus our analysis on sports. We performed dimensionality reduction on the (summerOly athletes) data to obtain the total number of medals won by each country in each sport per year. Based on this, we further calculated the historical total medal count for each country by grouping the data by National Olympic Committee (NOC) and summing the total medals (Total). This process yielded the historical total medal counts for each country. We then selected the top 20 countries based on their historical total medal counts, as these countries have demonstrated strong performance and representativeness in the field of sports.
+
+\subsection{Model Construction} \
+
+Due to the limited number of Olympic Games a single country has participated in, even the United States has only participated in 25 editions. Therefore, we chose linear regression over tree models to reduce the risk of overfitting. The basic linear model can be expressed as:
+$$
+y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_p x_p + \epsilon
+$$
+where $\beta_0$ is the intercept, $\beta_1, \beta_2, \ldots, \beta_p$ are the regression coefficients, and $\epsilon$ is the error term, which is typically assumed to follow a normal distribution with mean 0 and variance $\sigma^2$.
+
+However, we found that due to the large number of sports (48 in total), the model was at risk of overfitting. To mitigate this risk, we introduced the Lasso regression model.
+
+\subsection{The proposal of Lasso regression} \
+
+Lasso (Least Absolute Shrinkage and Selection Operator) regression effectively constrains the regression coefficients. Lasso regression adds an L1 regularization term to the minimization of the residual sum of squares. Its objective function is:
+$$
+\min_{\beta} \left\{ \sum_{i=1}^n \left( y_i - \beta_0 - \sum_{j=1}^p \beta_j x_{ij} \right)^2 + \lambda \sum_{j=1}^p |\beta_j| \right\}
+$$
+where $\lambda \geq 0$ is the regularization parameter, used to control the strength of regularization. The L1 regularization term $\lambda \sum_{j=1}^p |\beta_j|$ can shrink some regression coefficients to zero, thereby achieving variable selection by automatically identifying the most important predictors for the dependent variable.
+
+For the top 20 selected countries, we will construct Lasso regression models individually. Using each country's data as an example, we extract the features and target variable. We remove potentially unnecessary columns such as the National Olympic Committee code (NOC), Year, Total medals, and Number of Events. The remaining columns related to sports are used as the feature variables $ X $, while the Total number of medals is used as the target variable $ y $.
+
+\subsection{Model training and feature importance calculation}  \
+
+Set the regularization parameter $ \alpha = 0.1 $ for the Lasso regression model (where $ \alpha $ corresponds to $ \lambda $ in the formula). After training the model, obtain the feature importance, which is the absolute value of the regression coefficients. Store the feature importance for each sport of every country in a data frame.
+
+\subsection{Result Analysis} \
+
+Transpose the data frame storing feature importance so that the country is on the y-axis and the sport is on the x-axis. The heat map can visually show the difference in the importance of different sports in different countries.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.2]{Heat_map_result.png}
+    \caption{Predicted medal counts for the 2028 Olympics}
+    \label{fig:3}
+\end{figure}
+
+\subsection{Host Country and Medal Totals}
+
+\paragraph{Connection between Host Country and Total Medals} \
+Through the Mann-Whitney U test, we obtained the U statistic and the corresponding p-value. Assuming a significance level of $\alpha=0.05$, if the p-value is less than $\alpha$, we reject the null hypothesis. The actual calculated p-value was extremely small (e.g., $7.27 \times 10^{-9}$), which is far less than 0.05. This indicates that we reject the null hypothesis, providing strong evidence that there is a significant difference in total medals between host countries and non-host countries. This verifies our initial common-sense speculation that host countries indeed have a significant advantage in medal acquisition.
+
+\paragraph{Relationship between Total Events and Total Medals} \
+When performing the Kolmogorov-Smirnov (K-S) test on the entire dataset, we obtained the K-S statistic (e.g., 0.97, rounded to two decimal places) and the p-value (e.g., 0.0). Since the p-value is much smaller than the significance level $\alpha=0.05$, we reject the null hypothesis, concluding that there is a relationship between the total number of events and the total number of medals. This suggests that at the overall data level, changes in the total number of events are not independent of changes in the total number of medals; there may be an underlying mechanism, such as larger event scales (more total events) potentially leading to more total medals.
+
+\paragraph{Impact of Host Country Status on the Relationship between Total Events and Total Medals} \
+For the non-host country group (if host = 0), the K-S statistic (e.g., 0.98, rounded to two decimal places) and the p-value (e.g., 0.0); for the host country group (if host = 1), the K-S statistic (e.g., 0.70, rounded to two decimal places) and the p-value (e.g., $1.07 \times 10^{-6}$, rounded to two decimal places). In both groups, the p-values are much smaller than the significance level $\alpha=0.05$, indicating that there is a relationship between the total number of events and the total number of medals in both host and non-host scenarios. Although the K-S statistics differ between the two groups, the p-values do not show any clear indication that being a host country alters the fundamental nature of the relationship between the total number of events and the total number of medals. Therefore, whether or not a country is a host, the relationship between the total number of events and the total number of medals remains, suggesting that this relationship is not primarily driven by the host country status.
+
+\subsection{Conclusion}
+We progressively explored the relationships between various factors in sports events. First, we confirmed a strong connection between the host country and total medals, with host countries having a significant advantage in medal acquisition. We also found a relationship between the total number of events and total medals, which is unaffected by whether the country is a host. This suggests that there is a more general underlying pattern behind the relationship between the total number of events and total medals, rather than it being dominated by the special status of the host country.
+
+\section{Problem 2: Great Coach Effect Analysis}
+
+\paragraph{Background} \
+
+The Great Coach Effect refers to the significant enhancement a top coach can bring to athletes and teams, extending beyond mere tactical guidance. This influence encompasses psychological motivation, team cohesion, and profound impacts on game strategy. Numerous classic cases demonstrate that the guidance of a renowned coach can elevate a team from mid-to-low rankings to championship levels. Baker and Horton (2004) noted in their research that the role of a top coach is not limited to technical and tactical instruction; it also involves team psychological development, designing training programs, and adjusting game strategies, thereby enhancing athletes' performance in critical moments.
+
+\paragraph{Multi-level model architecture} \
+
+In this study, to effectively capture the impact of the Great Coach Effect on various sports, we employed a hierarchical modeling approach. This method allows us to treat the performance of different sports as independent levels, analyzing the interaction effects between these levels. By using this approach, we can fully leverage the data from each sport while accounting for the influence of coaches, annual variations, and other potential factors affecting medal performance.
+
+\paragraph{Data Pre-processing \& Model Construction} \
+
+In data preprocessing, we established a threshold variation system to identify 30 country records with significant fluctuations in one of their performance metrics. These countries' performance fluctuations exceeded our set threshold of 4 points. Assuming that a coach leading an Olympic team to win a gold medal during their tenure qualifies as a "great coach," after further screening, we retained 15 country records with great coach data. Using this data, we built a hierarchical modeling framework to analyze the impact of the Great Coach Effect on performance fluctuations across different sports.
+
+We employed two models to analyze the Great Coach Effect: Ordinary Least Squares (OLS) linear regression and Random Forest Regressor.
+
+The OLS regression formula is:
+$$
+Y = X\beta + \epsilon
+$$
+where $\beta$ is the regression coefficient and $\epsilon$ is the error term.
+
+Example Result:
+For gymnastics, the "Great Coach" variable had a coefficient of -0.5836 with a p-value of 0.021, indicating a significant but negative impact. The R-squared value was 0.091.
+
+The Random Forest model output feature importances of [0.69932006, 0.30067994] for gymnastics, showing that the "Great Coach" feature has a much greater impact than the "Year" feature.
+
+Here is the analysis result of one of the records:
+Results: Gymnastics
+Linear Regression (OLS) Model Results:
+$$
+\begin{array}{lrrrrrr}
+\text{Dep. Variable:} & \text{Medal} & \text{R-squared:} & 0.091 \\
+\text{Model:} & \text{OLS} & \text{Adj. R-squared:} & 0.059 \\
+\text{Method:} & \text{Least Squares} & \text{F-statistic:} & 2.839 \\
+\text{Date:} & \text{Mon, 27 Jan 2025} & \text{Prob (F-statistic):} & 0.0668 \\
+\text{Time:} & 21:33:47 & \text{Log-Likelihood:} & -79.677 \\
+\text{No. Observations:} & 60 & \text{AIC:} & 165.4 \\
+\text{Df Residuals:} & 57 & \text{BIC:} & 171.6 \\
+\text{Df Model:} & 2 & \text{Covariance Type:} & \text{nonrobust} \\
+\end{array}
+$$
+$$
+\begin{array}{lrrrrrr}
+\hline
+\text{Variable} & \text{coef} & \text{std err} & t & \text{P>|t|} & [0.025 & 0.975] \\
+\hline
+\text{const} & -21.2457 & 122.908 & -0.173 & 0.863 & -267.366 & 224.874 \\
+\text{Great Coach} & -0.5836 & 0.245 & -2.379 & 0.021 & -1.075 & -0.092 \\
+\text{Year} & 0.0109 & 0.061 & 0.179 & 0.859 & -0.111 & 0.133 \\
+\hline
+\end{array}
+$$
+
+Random Forest Feature Importances: $[0.69932006, 0.30067994]$
+
+\paragraph{Result of Choosing Great Coach} \
+
+In selecting countries for analysis, we chose from the top ten countries based on their overall Olympic medal standings. The rationale behind this choice is that these countries not only have a strong historical performance in sports but also possess sufficient financial resources to invest in sporting events and renowned coaches. We believe that only these countries have the economic capability to attract and invest in top-tier coaches, thereby enhancing their athletic performance.
+
+To further analyze the impact of renowned coaches on different countries, we examined 15 sample datasets related to the coach effect. We calculated the average ranking improvement (Lift) and the Average Treatment Effect (ATE) before and after the introduction of renowned coaches. Additionally, we used an Ordinary Least Squares (OLS) linear regression model to compute the regression coefficients. These three metrics evaluate the enhancement of medal performance from different perspectives. Specifically, Lift represents the direct ranking improvement brought about by the introduction of renowned coaches, ATE measures the average effect of the coach effect, and the regression coefficients quantify the statistical impact of the coach factor.
+
+To integrate these three metrics, we proposed an improvement index, calculated as follows:
+$$
+\text{improvement} = \frac{\text{improvement\_by\_coeff} + \text{improvement\_by\_ate} + \text{improvement\_by\_lift}}{3}
+$$
+
+This improvement index serves as a crucial factor input into the Random Forest model to predict the potential impact of renowned coaches on medal performance across various sports. By conducting significance tests, we were able to determine which countries and sports would show significant improvements after the introduction of renowned coaches. In the final analysis phase of this study, we analyzed 27 data points using a LASSO regression model that considers the relationship between sports and countries. Our findings indicate that China, the United Kingdom, and the United States showed significant results in specific sports such as athletics, volleyball, and shooting. Specifically, the p-values for these sports were all below 0.05, indicating that the impact of renowned coaches in these areas is significant.
+
+Therefore, based on these statistical results, we conclude that investing in renowned coaches for these sports can be expected to yield significant improvements. Consequently, we recommend that China, the United Kingdom, and the United States consider investing in renowned coaches in athletics, volleyball, and shooting to achieve further competitive advantages and notable enhancements in medal performance.
+
+\noindent \textbf{Summary}
+
+In this study, we explored the impact of the Great Coach Effect on Olympic medal performance by combining threshold regression models with a hierarchical modeling framework. We defined a "Great Coach" as one who has led an Olympic team to win a gold medal. Based on a scoring system for gold, silver, and bronze medals, we set a performance fluctuation threshold (fluctuations exceeding 4 points were considered significant). Using this threshold regression model, we quantified the performance fluctuations of countries across different Olympic cycles and identified countries with significant performance fluctuations.
+
+After data processing, we selected 15 records related to great coaches and applied both OLS regression and Random Forest regression models for analysis. The OLS regression helped us understand the impact of great coaches in different sports, while the Random Forest model further validated the role of the Great Coach Effect through feature importance analysis.
+
+By combining threshold regression models to capture performance fluctuations and employing a hierarchical modeling framework to enhance the depth and accuracy of the analysis, our study concludes that the Great Coach Effect plays a significant role in Olympic medal performance.
+
+
+
+\subsection{Unique insights}
+
+In predicting the 2028 Olympic medal standings, we recognize that athletes' performances are highly dependent on their state during the competition, which can be highly random. Traditional prediction models typically rely on historical data or certain static factors. However, in highly competitive events like the Olympics, athletes' states and performances can be influenced by many external and temporary factors. Therefore, a Markov chain model is particularly suitable for this scenario because it can account for each athlete's immediate state during the competition and predict their future performance based on the current state.
+
+The Markov chain's memoryless property means that an athlete's future state (such as the probability of winning a medal) depends only on the current state and not on past medal history. This characteristic is particularly important in Olympic medal predictions because we believe that athletes' performances across different Olympic cycles are more determined by their current state rather than the accumulation of historical achievements.
+
+By constructing a transition matrix for the Markov chain, we capture the patterns of athletes transitioning between different medal states. Furthermore, by converting each athlete's medal state into a probability distribution and incorporating the participation of athletes from different countries, we predict the expected number of medals each country will win in the next Olympics. This method not only enhances the dynamism and real-time accuracy of the model but also provides a more scientific and precise tool for medal prediction.
+
+Through this approach, our research offers new insights into Olympic medal forecasting, highlighting the unique advantages of the Markov chain model in capturing dynamic states and random fluctuations. This allows for a better reflection of athletes' true performance during competitions and translates this into effective predictions of national medal counts.
+
+
+\section{Conclusion}
+
+In this study, we aimed to explore the potential benefits of investing in renowned coaches for improving Olympic medal performance. By focusing on the top ten countries based on their historical Olympic medal standings, we identified China, the United Kingdom, and the United States as prime candidates for such investments due to their strong sporting competitiveness and financial capabilities.
+
+Our analysis involved calculating three key metrics: the average ranking improvement (Lift), the Average Treatment Effect (ATE), and the regression coefficients from an OLS linear regression model. These metrics were integrated into a composite improvement index, which was then used as an input feature in a Random Forest model to predict the impact of renowned coaches on various sports.
+
+The results from our LASSO regression model, applied to 27 data points, revealed significant improvements in athletics, volleyball, and shooting for the selected countries. Specifically, the p-values for these sports were all below 0.05, indicating that the introduction of renowned coaches had a substantial positive effect on medal performance.
+
+Based on these findings, we recommend that China, the United Kingdom, and the United States consider strategic investments in renowned coaches for athletics, volleyball, and shooting. Such investments are expected to enhance their competitive edge and lead to notable improvements in their medal counts. Additionally, these countries should continue to monitor and evaluate the effectiveness of their coaching strategies to ensure sustained success.
+
+Looking ahead, future research could expand this analysis to include more countries and a broader range of sports. Investigating the long-term effects of coach investments and exploring other factors that contribute to athletic success, such as training facilities and athlete development programs, would provide further insights. Furthermore, incorporating advanced machine learning techniques and larger datasets could refine predictive models and offer more precise recommendations for optimizing Olympic performance.
+
+In conclusion, our study highlights the significant role that renowned coaches can play in enhancing Olympic medal performance. By leveraging data-driven approaches and making informed investment decisions, countries can achieve greater success in international sporting events.
+
+
+\begin{thebibliography}{99}
+
+    \bibitem{baker2004}
+    Baker, J., \& Horton, S. (2004). A review of the literature on the effects of coaching on performance and the development of sport expertise. \textit{Journal of Sport Science}, 22(2), 99--111.
+    
+    \bibitem{polanco2023}
+    Polanco, C. (2023). Markov chain process. \textit{Bentham Science Publishers eBooks}, 28--36. DOI: \url{https://doi.org/10.2174/9789815080476123010009}
+    
+    \bibitem{farrow2013}
+    Farrow, D., Baker, J., \& MacMahon, C. (2013). Developing sport expertise: Researchers and coaches put theory into practice. \textit{Routledge}.
+    
+    \end{thebibliography}
+
+
+\end{document}
